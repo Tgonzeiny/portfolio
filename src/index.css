@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00bfff;
+  --color-secondary: #e6e6fa;
+}
+
+.light-mode, .dark-mode {
+  transition: all 0.5s ease-in-out;
+}
+
+.dark-mode {
+  background-color: #0D1117;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+button {
+  padding: 5px;
+  margin: 2px;
+  background-color: #0D1117;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  border-radius: 5ex;
+}
+
+button:hover {
+  background-color: #e9ebe9;
+}
+
+
+button-theme{
+  transition: color 0.3s ease-in-out;
+}
+
+.dark-mode .button-theme {
+  background-color: white;
+  color: rgb(49, 45, 45);
+}
+
+.button-theme:hover {
+  transform: scale(1.1);
+}
+
+.icon{
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .skills, .projects {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.skills-section {
+  transition: max-height 0.5s ease-in-out;
+}
+
+body {
+  margin: 5px;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.card,
+.skills-section,
+.experience,
+.projects {
+  margin: 5px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+footer {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+
+.skills-section {
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.skills-section.visible {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 1.2rem;
+    }
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a:hover {
+  color: #007bff;
+}
+.theme-toggle {
+  padding: 10px;
+  border: 10px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.loading-dots {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.loading-dots span {
+  display: inline-block;
+  margin: 0 2px;
+  animation: wave 1.2s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: 0s; }
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%          { transform: translateY(-8px); }
+}
+
+p {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  margin-block: 1lh;
+}
