@@ -7,7 +7,7 @@ export const experienceData = [
     startDate: 'October 2023',
     endDate: 'Present',
     description: [
-      'Developed and created multiple enterprise systems and apps in Java, Python and C++. Modernized old systems using CI/CD pipelines.',
+      'Check out my latest work at General Dynamics, on my resume! There is a ton of projects I have worked on, and I can\'t fit them all here!',
     ],
   }
 ];

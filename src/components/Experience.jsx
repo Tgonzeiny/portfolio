@@ -13,7 +13,7 @@ export default function Experience() {
       viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-primary mb-12 text-center z-10"
+        className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center z-10"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -44,7 +44,7 @@ export default function Experience() {
                 <h3 className="text-xl md:text-2xl font-bold text-secondary leading-tight mb-2">
                   {exp.title} at {exp.company}
                 </h3>
-                <p className="text-primary text-base md:text-lg font-medium mb-1">
+                <p className="text-blue-400 text-base md:text-lg font-medium mb-1">
                   {exp.location}
                 </p>
                 <p className="text-secondary text-base md:text-lg font-semibold mb-4">

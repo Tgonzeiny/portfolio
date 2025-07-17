@@ -11,7 +11,7 @@ function App() {
     <>  
       <Navbar />
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory sm:snap-none md:snap-y md:snap-mandatory">
-        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-[length:200%_200%] animate-[gradient-x_8s_ease_infinite]">
+        <div className="bg-gradient-to-r from-blue-900 via-purple-800 to-purple-900 bg-[length:200%_200%] animate-[gradient-x_8s_ease_infinite]">
           <section id='home' className='snap-start min-h-screen'>
             <Header />
           </section>

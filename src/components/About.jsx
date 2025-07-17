@@ -1,54 +1,38 @@
 import { motion } from 'framer-motion';
-import { aboutSectionVariants, aboutChildVariants, aboutImageVariants } from '../utils/variants'; 
 
 export default function About() {
   return (
     <motion.section
-      id="about" 
-      className="flex flex-col items-center justify-center min-h-screen py-16 px-4 md:px-8  text-secondary" 
-      variants={aboutSectionVariants} 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }} 
+      className="flex flex-col items-start justify-center min-h-screen bg-transparent px-6 md:px-20"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      id="/in"
     >
-      <motion.h2
-        variants={aboutChildVariants} 
-        className="text-3xl md:text-5xl font-extrabold text-primary mb-12 text-center"
+      <motion.div className="mb-16">
+        <motion.h2
+          className="text-[10rem] md:text-[16rem] font-extrabold text-white tracking-tight cursor-pointer"
+          whileHover={{ x: 12, y: -8, rotate: -4, scale: 1.08 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+          style={{ lineHeight: 1 }}
+        >
+          /in
+        </motion.h2>
+        <div className="w-40 h-1 bg-white rounded-full mt-4" />
+      </motion.div>
+
+      <a
+        href="https://www.linkedin.com/in/thomasgonzal/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group"
       >
-        About Me
-      </motion.h2>
-        <motion.span
-            variants={aboutChildVariants}
-            className="uppercase text-sm tracking-widest text-primary text-center font-semibold mb-4"
-        >
-        I don't wait for permission. I build it myself.
-        </motion.span>
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-12 max-w-6xl mx-auto">
-        <motion.div
-          variants={aboutImageVariants}
-          className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden shadow-lg border-4 border-purple-600"
-        >
-          <img 
-            src="/me.jpg"
-            alt="Thomas Gonzalez Profile" 
-            className="w-full h-full object-cover" 
-          />
-        </motion.div>
-        <div className="md:w-2/3 text-lg md:text-xl text-secondary space-y-6 text-center md:text-left">
-          <motion.p variants={aboutChildVariants}>
-                I’m Thomas Gonzalez, a Backend-Focused Full-Stack Developer from New York
-          </motion.p>
-          <motion.p variants={aboutChildVariants}>
-                I specialize in scalable backend architectures, APIs, and databases.
-          </motion.p>
-          <motion.p variants={aboutChildVariants}>
-          </motion.p>
-          <motion.p variants={aboutChildVariants}>
-                <a href="#projects" className="text-primary hover:text-purple-300 font-semibold transition-colors">check out my work</a> or <a href="#contact" className="text-primary hover:text-purple-300 font-semibold transition-colors">reach out</a>.
-          </motion.p>
-        </div>
-        
-      </div>
+        <img
+          src="linkedin-banner.png"
+          alt="LinkedIn Banner"
+          className="w-full max-w-2xl rounded-xl shadow-2xl border-4 border-blue-600 group-hover:scale-105 transition-transform duration-300"
+        />
+      </a>
     </motion.section>
   );
 }

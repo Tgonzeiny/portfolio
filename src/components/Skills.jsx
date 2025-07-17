@@ -57,7 +57,7 @@ export default function Skills() {
       transition={{ duration: 0.6 }}
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-primary mb-4 text-center"
+        className="text-4xl md:text-5xl font-extrabold text-white mb-4 text-center"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -89,7 +89,7 @@ export default function Skills() {
             variants={skillCardVariants}
             whileHover={{ scale: 1.03, boxShadow: "0 10px 15px -3px rgba(139, 92, 246, 0.4), 0 4px 6px -2px rgba(139, 92, 246, 0.2)" }} 
           >
-            <Icon className="text-primary text-5xl mb-4" />
+            <Icon className="text-white text-5xl mb-4" />
             <h3 className="text-2xl font-bold text-secondary mb-6">{title}</h3>
             
             <div className="grid grid-cols-2 gap-x-4 gap-y-6 w-full"> 

@@ -1,6 +1,4 @@
 import { FaLinkedin, FaGithub} from 'react-icons/fa';
-import { BsTwitterX } from "react-icons/bs";
-import { SiHackerone } from "react-icons/si";
 import { TbBrandLeetcode } from "react-icons/tb";
 
 
