@@ -153,6 +153,17 @@ footer {
   transition: color 0.3s ease-in-out;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #5531e6;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #6946a5;
+}
+
 .nav-list li a:hover {
   color: #007bff;
 }

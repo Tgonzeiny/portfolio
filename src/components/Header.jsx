@@ -1,31 +1,55 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedLoader from './AnimatedLoader';
 import { GrGithub } from "react-icons/gr";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
-import { RiTwitterXLine } from "react-icons/ri";
-import { AiFillInstagram } from "react-icons/ai";
 import { headerVariants, childVariants, iconsVariant } from '../utils/variants';
 
 
 export default function Header() {
   const [showLoader, setShowLoader] = useState(true);
   const [showHeader, setShowHeader] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const fullText = "Hi, I'm Thomas!";
+
+  const indexRef = useRef(0); // persistent index
 
   useEffect(() => {
-    const loaderTimeout = setTimeout(() => {
-      setShowLoader(false);
-    }, 1200); 
-
-    const headerTimeout = setTimeout(() => {
-      setShowHeader(true);
-    }, 700); 
-
+    const loaderTimeout = setTimeout(() => setShowLoader(false), 1200);
+    const headerTimeout = setTimeout(() => setShowHeader(true), 700);
     return () => {
       clearTimeout(loaderTimeout);
       clearTimeout(headerTimeout);
     };
   }, []);
+
+  // Typewriter effect (recursive setTimeout for smooth animation)
+  useEffect(() => {
+    if (!showHeader) return;
+
+    let timeoutId;
+
+    function typeLetter() {
+      setTypedText(fullText.slice(0, indexRef.current + 1));
+      if (indexRef.current < fullText.length - 1) {
+        indexRef.current += 1;
+        timeoutId = setTimeout(typeLetter, 120); // Adjust speed here
+      } else {
+        // Pause, then restart
+        timeoutId = setTimeout(() => {
+          indexRef.current = 0;
+          setTypedText('');
+          setTimeout(typeLetter, 400); // Short pause before restarting
+        }, 1500);
+      }
+    }
+
+    indexRef.current = 0;
+    setTypedText('');
+    timeoutId = setTimeout(typeLetter, 400);
+
+    return () => clearTimeout(timeoutId);
+  }, [showHeader]);
 
   return (
     <>
@@ -41,26 +65,34 @@ export default function Header() {
             <motion.h1
                 variants={childVariants}
                 tabIndex={0}
-                className="text-4xl md:text-6xl font-extrabold text-primary"
+                className="text-4xl md:text-6xl font-extrabold text-white text-primary"
                 role="heading"
                 aria-label="Welcome to my portfolio"
                 >
-                My name is Thomas!
+                {typedText}
             </motion.h1>
 
             <motion.p
                 variants={childVariants}
                 tabIndex={0}
-                className="mt-6 text-lg md:text-2xl text-secondary"
+                className="mt-6 text-lg md:text-2xl text-secondary text-center max-w-2xl mx-auto"
                 role="contentinfo"
                 aria-label="I am a Backend-Focused Full-Stack Developer"
-                >
-                Backend-Focused Full-Stack Developer.
+            >
+                I'm a software engineer based in NY, and currently working at&nbsp;
+                <span className="text-blue-600 font-semibold">General Dynamics</span>
+                &nbsp;as a&nbsp;
+                <span className="text-green-600 font-semibold">full-stack engineer</span>!
+                <span className="block mt-2">
+                  I've also worked on various projects, including a full-stack e-commerce application, check them out at my&nbsp;
+                  <span className="font-bold">GitHub</span>
+                  &nbsp;below!
+                </span>
             </motion.p>
             <div className='flex gap-8'>
                 <motion.a
                     variants={childVariants}
-                    href="/General-resume.pdf"
+                    href="/general-resume.pdf"
                     target="_blank"
                     download
                     rel="noopener noreferrer"

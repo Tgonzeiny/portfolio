@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', id: 'home' },
-    { name: 'About', id: 'about' },
+    { name: '/in', id: '/in' },
     { name: 'Skills', id: 'skills' },
     { name: 'Experience', id: 'experience' },
     { name: 'Projects', id: 'projects' },
@@ -72,8 +72,16 @@ const Navbar = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <a href="#home" className={`text-xl md:text-2xl font-bold ${scrolled ? 'text-secondary' : 'text-secondary'}`}>
-          Thomas Gonzalez
+        <a
+          href="#home"
+          className={`flex items-center gap-2 text-xl md:text-2xl font-bold ${scrolled ? 'text-secondary' : 'text-secondary'}`}
+        >
+          <img
+            src="/logo.png" 
+            alt="Logo"
+            className="w-12 h-12 md:w-15 md:h-15 object-contain"
+            style={{ borderRadius: '50%' }}
+          />
         </a>
       </motion.div>
 
@@ -123,7 +131,7 @@ const Navbar = () => {
             {activeSection === link.id && (
               <motion.span
                 layoutId="active-nav-pill" 
-                className={`absolute inset-0 rounded-full ${scrolled ? 'bg-purple-600' : 'bg-purple-600'} z-[-1]`} // z-[-1] here makes it go behind the link text
+                className={`absolute inset-0 rounded-full ${scrolled ? 'bg-purple-600' : 'bg-purple-600'} z-[-1]`}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             )}

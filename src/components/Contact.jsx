@@ -14,7 +14,7 @@ export default function Contact() {
       viewport={{ once: true, amount: 0.1 }}
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-primary mb-12 text-center z-10"
+        className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center z-10"
         variants={headingVariants}
       >
         Get In Touch
@@ -37,7 +37,7 @@ export default function Contact() {
         <div className="space-y-6">
           <motion.div variants={itemVariants}>
             <a
-              href="mailto:operation927@gmail.com" 
+              href="mailto:tgonzal9@binghamton.edu" 
               className="flex items-center justify-center text-secondary text-lg md:text-xl hover:text-purple-400 transition-colors duration-200"
             >
               <FaEnvelope className="mr-3 text-purple-400" size={24} />
@@ -47,7 +47,7 @@ export default function Contact() {
 
           <motion.div variants={itemVariants}>
             <a
-              href="tel:+58-412-844-9024" 
+              href="tel:+1-631-707-5608" 
               className="flex items-center justify-center text-secondary text-lg md:text-xl hover:text-purple-400 transition-colors duration-200"
             >
               <FaPhone className="mr-3 text-purple-400" size={24} />
